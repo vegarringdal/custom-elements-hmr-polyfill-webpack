@@ -1,0 +1,28 @@
+{
+  "name": "custom-elements-hmr-polyfill-webpack",
+  "version": "1.0.0",
+  "description": "simple test to see if it works",
+  "private": true,
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server --hotOnly"
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": "Vegar Ringdal",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3",
+    "@webcomponents/webcomponentsjs": "^2.4.3",
+    "clean-webpack-plugin": "^3.0.0",
+    "custom-elements-hmr-polyfill": "^1.0.0",
+    "html-webpack-plugin": "^4.2.0"
+  },
+  "dependencies": {
+    "@ungap/custom-elements-builtin": "^0.4.0",
+    "document-register-element": "^1.14.3"
+  }
+}
