@@ -1,14 +1,19 @@
 import { applyPolyfill, ReflowStrategy } from "custom-elements-hmr-polyfill";
 applyPolyfill(ReflowStrategy.NONE);
-import { run } from "./app";
-run();
 
-let reloads = 0;
+// do not reload the imported modules
+import "@vaadin/vaadin-date-picker";
+
+async function app() {
+  await import("./main.js");
+  document.body.innerHTML = "";
+  document.body.innerHTML = "<app-root></app-root>";
+}
+
+app();
 
 if (module.hot) {
-  module.hot.accept("./app.js", function () {
-    reloads++;
-    console.log("Reloading", reloads);
-    run();
+  module.hot.accept("./main.js", function (x) {
+    app();
   });
 }
